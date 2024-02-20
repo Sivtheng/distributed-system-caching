@@ -9,14 +9,14 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $response = Http::get('http://167.99.71.244:8080/articles');
+        $response = Http::get('http://128.199.124.75:8080/articles');
         $articles = $response->json();
         return view('index', ['articles' => $articles]);
     }
 
     public function store(Request $request)
     {
-        $response = Http::post('http://167.99.71.244:8080/articles', [
+        $response = Http::post('http://128.199.124.75:8080/articles', [
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'author' => $request->input('author'),
