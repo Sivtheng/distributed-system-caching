@@ -24,4 +24,10 @@ class ArticleController extends Controller
         ]);
         return redirect('/');
     }
+
+    public function destroy($id)
+    {
+        $response = Http::delete("http://128.199.124.75:8080/articles/{$id}");
+        return redirect('/');
+    }
 }

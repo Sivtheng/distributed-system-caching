@@ -17,6 +17,11 @@
                     <p>{{ $article['description'] }}</p>
                     <p>Author: {{ $article['author'] }}</p>
                     <img src="{{ asset('images/news.jpeg') }}" alt="{{ $article['title'] }}">
+                    <form method="POST" action="/articles/{{ $article['id'] }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Delete</button>
+                    </form>
                 </li>
             @endforeach
         </ul>
